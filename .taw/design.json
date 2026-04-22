@@ -1,0 +1,76 @@
+{
+  "style": {
+    "primary": "Dark Minimalism",
+    "secondary": "Bento-inspired project grid",
+    "rationale": "ui-ux-pro-max: Portfolio/Personal → Motion-Driven + Minimalism. Dark Mode (OLED) provides WCAG AAA contrast, low emission, perfect for developer portfolios. Exaggerated Minimalism reserved for hero typography only.",
+    "complexity": "low",
+    "wcag": "AAA"
+  },
+  "palette": {
+    "source": "ui-ux-pro-max colors.csv → Portfolio/Personal (inverted for dark mode)",
+    "bg": "#0A0A0A",
+    "bgElevated": "#18181B",
+    "bgCard": "#111113",
+    "border": "#27272A",
+    "borderHover": "#3F3F46",
+    "text": "#FAFAFA",
+    "textMuted": "#A1A1AA",
+    "textDim": "#71717A",
+    "accent": "#2563EB",
+    "accentHover": "#1D4ED8",
+    "accentRing": "#3B82F6"
+  },
+  "typography": {
+    "headingFont": "Geist Sans",
+    "bodyFont": "Inter",
+    "rationale": "Both are geometric sans-serifs optimized for screens. Geist (by Vercel) gives a sharp, technical identity for headings; Inter handles body copy with superior legibility at small sizes.",
+    "googleFontsImport": "next/font/google — Inter, Geist_Sans",
+    "tailwindConfig": {
+      "fontFamily": {
+        "heading": ["var(--font-geist-sans)", "sans-serif"],
+        "body": ["var(--font-inter)", "sans-serif"]
+      }
+    },
+    "scale": {
+      "h1": "clamp(2.75rem, 6vw, 4.5rem)",
+      "h2": "clamp(2rem, 4vw, 3rem)",
+      "h3": "1.5rem",
+      "body": "1rem",
+      "small": "0.875rem"
+    }
+  },
+  "layout": {
+    "pattern": "Single-page scroll with 4 anchored sections, sticky top nav",
+    "container": "max-w-5xl mx-auto px-6",
+    "sectionSpacing": "py-24 md:py-32",
+    "nav": {
+      "variant": "floating glass — top-4, backdrop-blur, border-white/10",
+      "links": ["Giới thiệu", "Dự án", "Liên hệ"]
+    },
+    "hero": "Centered, oversized name (Exaggerated Minimalism touch), title below, two CTAs (primary blue + ghost)",
+    "about": "Two-column on md+: bio paragraph left, skill chips / quick facts right",
+    "projects": "2x2 grid on md+, single column mobile. shadcn Card with border hover accent",
+    "contact": "Centered email + 3 social icon buttons (GitHub, LinkedIn, Email)",
+    "footer": "Single line: © 2026 Toan Ho · Built with Next.js"
+  },
+  "components": {
+    "library": "shadcn/ui",
+    "install": ["button", "card", "badge", "separator"]
+  },
+  "motion": {
+    "scrollReveal": "fade-up on section enter (CSS only — @media prefers-reduced-motion: no-preference)",
+    "hover": "border-color + subtle translate-y-[-2px], 200ms ease-out",
+    "reducedMotion": "respected"
+  },
+  "icons": {
+    "set": "lucide-react",
+    "size": "w-5 h-5",
+    "rationale": "No emojis as UI icons per ui-ux-pro-max rule"
+  },
+  "accessibility": {
+    "minContrast": "7:1 (AAA) body, 4.5:1 muted",
+    "focusRing": "ring-2 ring-accentRing ring-offset-2 ring-offset-bg",
+    "skipLink": true,
+    "semanticLandmarks": ["header", "main", "section[aria-labelledby]", "footer"]
+  }
+}

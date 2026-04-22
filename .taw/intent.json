@@ -1,0 +1,35 @@
+{
+  "category": "landing-page",
+  "subtype": "personal-portfolio",
+  "raw": "làm portpolio cho tôi nhá, làm cho ô Toàn này",
+  "keywords": ["portfolio", "Toan Ho", "Full-Stack Developer", "dark theme"],
+  "reference_design": {
+    "name": "Toan Ho",
+    "title": "Full-Stack Developer",
+    "theme": "dark",
+    "sections": ["Hero", "Giới thiệu", "Dự án", "Liên hệ"],
+    "nav_links": ["Giới thiệu", "Dự án", "Liên hệ"],
+    "cta_primary": "Xem dự án",
+    "cta_secondary": "Liên hệ",
+    "social": ["GitHub", "LinkedIn", "Email"],
+    "projects_count": 4,
+    "sample_projects": [
+      {"name": "Portfolio Website", "desc": "Trang web portfolio cá nhân được xây dựng với Next.js và Tailwind CSS.", "stack": ["Next.js", "Tailwind CSS", "TypeScript"], "link_type": "demo"},
+      {"name": "Task Manager App", "desc": "Ứng dụng quản lý công việc fullstack với xác thực và cập nhật real-time.", "stack": ["React", "Node.js", "PostgreSQL"], "link_type": "source"},
+      {"name": "E-commerce Store", "desc": "Cửa hàng trực tuyến với danh sách sản phẩm, giỏ hàng và thanh toán.", "stack": ["Next.js", "Supabase", "Stripe"], "link_type": "demo"},
+      {"name": "Weather Dashboard", "desc": "Bảng điều khiển thời tiết với dữ liệu real-time và biểu đồ trực quan.", "stack": ["React", "Chart.js", "OpenWeather API"], "link_type": "source"}
+    ]
+  },
+  "clarifications": {
+    "name": "Toan Ho",
+    "title": "Full-Stack Developer",
+    "email": "toanho@example.com",
+    "github": "#",
+    "linkedin": "#",
+    "bio": "Tôi là một lập trình viên full-stack với niềm đam mê xây dựng ứng dụng web hiện đại. Tôi thích làm việc với React, Next.js và Node.js để tạo ra những sản phẩm có trải nghiệm người dùng tốt.",
+    "avatar": false,
+    "projects": "default-4",
+    "deploy_target": "vercel",
+    "user_answer": "ừ làm đi (dùng hết mặc định)"
+  }
+}
