@@ -1,25 +1,65 @@
-import { ProjectCard } from "@/components/project-card";
-import { PROJECTS } from "@/lib/content";
+import { EditorialTile } from "@/components/editorial-tile";
+
+const PROJECTS = [
+  {
+    index: "01",
+    name: "Nova Banking",
+    kind: "MOBILE APP · REDESIGN",
+    desc: "Thiết kế lại trải nghiệm ngân hàng số cho thế hệ Gen Z — flow mở thẻ dưới 2 phút.",
+    year: "2025",
+  },
+  {
+    index: "02",
+    name: "Kafe Identity",
+    kind: "BRAND · IDENTITY SYSTEM",
+    desc: "Xây hệ thống thương hiệu cho chuỗi cafe 12 chi nhánh — logo, bao bì, điểm chạm số.",
+    year: "2024",
+  },
+  {
+    index: "03",
+    name: "Lumen Editorial",
+    kind: "WEB · EDITORIAL",
+    desc: "Trang tạp chí dài hơi về kiến trúc đương đại — typography dẫn lối câu chuyện.",
+    year: "2024",
+  },
+  {
+    index: "04",
+    name: "Orbit Design System",
+    kind: "SYSTEM · COMPONENTS",
+    desc: "Design system 120+ component cho nền tảng SaaS nội bộ — hướng đến nhất quán đa đội.",
+    year: "2023",
+  },
+];
 
 export function Projects() {
   return (
-    <div className="mx-auto max-w-5xl px-6">
-      <h2
-        id="du-an-title"
-        className="font-heading text-[clamp(2rem,4vw,3rem)] font-bold tracking-tight"
-      >
-        Dự án
-      </h2>
-      <p className="mt-3 text-base text-muted-foreground">
-        Một vài sản phẩm gần đây tôi đã làm.
-      </p>
-      <ul className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
-        {PROJECTS.map((project) => (
-          <li key={project.name}>
-            <ProjectCard project={project} />
-          </li>
+    <div className="px-6 md:px-10 lg:px-16">
+      {/* heading row — mono labels + year range */}
+      <div className="flex items-baseline justify-between border-b border-hairline pb-6">
+        <p
+          id="du-an-title"
+          className="font-mono text-xs uppercase tracking-[0.3em] text-muted"
+        >
+          SELECTED WORK / 02
+        </p>
+        <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted">
+          2023 — 2025
+        </p>
+      </div>
+
+      {/* tiles */}
+      <div className="flex flex-col">
+        {PROJECTS.map((p) => (
+          <EditorialTile
+            key={p.index}
+            index={p.index}
+            name={p.name}
+            kind={p.kind}
+            desc={p.desc}
+            year={p.year}
+          />
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

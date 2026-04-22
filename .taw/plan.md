@@ -1,7 +1,7 @@
-# Plan — Portfolio cho Toan Ho
+# Plan — Portfolio Toan Ho (iter 2: Designer redesign)
 
-1. **Stack:** Next.js 14 App Router + Tailwind CSS + shadcn/ui + TypeScript (không cần DB — static site)
-2. **Trang:** 1 trang single-page với 4 section: Hero (Toan Ho / Full-Stack Developer + 2 nút CTA), Giới thiệu, Dự án (4 card: Portfolio, Task Manager, E-commerce, Weather), Liên hệ (email + GitHub/LinkedIn)
-3. **Design:** Dark theme giống hình — nền đen, chữ trắng, nút xanh dương accent, font Inter / Geist Sans, hover tinh tế
-4. **Deploy:** Vercel (free, 1-click)
-5. **Est. time:** 10-15 phút
+1. **Pivot nội dung:** Toan Ho → **Product Designer**. Tagline mới + 4 project case study (Nova Banking, Kafe Identity, Lumen Editorial, Orbit Design System).
+2. **Aesthetic mới:** Noir editorial × brutalist grid × **lime neon #C6F432** — oversized serif display bleed off-grid, mono label, marquee tag band, asymmetric magazine layout (bỏ centered hero).
+3. **Tech:** Giữ Next.js 16 + Tailwind v4 + shadcn đã có. Thêm `framer-motion` cho scroll reveal + cursor-follow. Font: **Fraunces** (display serif) + **JetBrains Mono** (meta) + **Geist Sans** (body).
+4. **Reuse:** Không scaffold lại — chỉ rewrite `app/page.tsx`, `app/layout.tsx`, `app/globals.css`, các section + thêm components mới (marquee, editorial-tile, cursor-spot, number-index).
+5. **Est. time:** 8–12 phút.

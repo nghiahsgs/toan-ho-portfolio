@@ -1,35 +1,44 @@
 {
   "category": "landing-page",
-  "subtype": "personal-portfolio",
-  "raw": "làm portpolio cho tôi nhá, làm cho ô Toàn này",
-  "keywords": ["portfolio", "Toan Ho", "Full-Stack Developer", "dark theme"],
-  "reference_design": {
-    "name": "Toan Ho",
-    "title": "Full-Stack Developer",
-    "theme": "dark",
-    "sections": ["Hero", "Giới thiệu", "Dự án", "Liên hệ"],
-    "nav_links": ["Giới thiệu", "Dự án", "Liên hệ"],
-    "cta_primary": "Xem dự án",
-    "cta_secondary": "Liên hệ",
-    "social": ["GitHub", "LinkedIn", "Email"],
-    "projects_count": 4,
-    "sample_projects": [
-      {"name": "Portfolio Website", "desc": "Trang web portfolio cá nhân được xây dựng với Next.js và Tailwind CSS.", "stack": ["Next.js", "Tailwind CSS", "TypeScript"], "link_type": "demo"},
-      {"name": "Task Manager App", "desc": "Ứng dụng quản lý công việc fullstack với xác thực và cập nhật real-time.", "stack": ["React", "Node.js", "PostgreSQL"], "link_type": "source"},
-      {"name": "E-commerce Store", "desc": "Cửa hàng trực tuyến với danh sách sản phẩm, giỏ hàng và thanh toán.", "stack": ["Next.js", "Supabase", "Stripe"], "link_type": "demo"},
-      {"name": "Weather Dashboard", "desc": "Bảng điều khiển thời tiết với dữ liệu real-time và biểu đồ trực quan.", "stack": ["React", "Chart.js", "OpenWeather API"], "link_type": "source"}
-    ]
-  },
+  "subtype": "personal-portfolio-designer",
+  "raw": "làm lai UI cho fancy đc k ? giả sử Toan Ho bây giờ là designer xem nào",
+  "keywords": ["portfolio", "Toan Ho", "designer", "fancy UI", "redesign", "noir", "neon", "editorial"],
+  "mode": "safe",
+  "pivot_from": "Full-Stack Developer",
+  "pivot_to": "Product Designer",
+  "iteration": 2,
   "clarifications": {
-    "name": "Toan Ho",
-    "title": "Full-Stack Developer",
-    "email": "toanho@example.com",
-    "github": "#",
-    "linkedin": "#",
-    "bio": "Tôi là một lập trình viên full-stack với niềm đam mê xây dựng ứng dụng web hiện đại. Tôi thích làm việc với React, Next.js và Node.js để tạo ra những sản phẩm có trải nghiệm người dùng tốt.",
-    "avatar": false,
-    "projects": "default-4",
-    "deploy_target": "vercel",
-    "user_answer": "ừ làm đi (dùng hết mặc định)"
+    "designer_type": "Product / UI-UX Designer",
+    "aesthetic": "Noir + lime neon — dark editorial with 1 neon accent color, cinematic full-bleed imagery feel",
+    "content_pivot": "Swap 4 projects to design-themed case studies (brand identity, mobile app redesign, editorial site, design system)",
+    "user_answer": "mặc định hết"
+  },
+  "design_brief": {
+    "direction": "Noir editorial × brutalist grid × lime-neon accent",
+    "avoid": ["generic Inter body", "plain shadcn card stack", "center-aligned hero feel", "AI-slop pastel gradients"],
+    "signature_moves": [
+      "oversized serif display heading (80-160px) that bleeds off-grid",
+      "1 electric accent color (lime #C6F432 or acid yellow)",
+      "noir #0A0A0A with subtle grain texture",
+      "asymmetric magazine-style layout, not centered column",
+      "project cards as editorial tiles with bold index numbers (01 / 02 / 03 / 04)",
+      "mixed typography: display serif for H1, geometric mono for metadata/labels, neutral sans for body",
+      "subtle hover interactions (cursor-following, tile reveal)",
+      "marquee / scrolling text band for tag list",
+      "numbered nav + section markers like a print magazine"
+    ],
+    "content_swap": {
+      "title": "Product Designer",
+      "tagline_options": [
+        "Designer dựng trải nghiệm số ở Sài Gòn.",
+        "Thiết kế sản phẩm có ý tưởng, có hậu quả."
+      ],
+      "projects": [
+        {"index": "01", "name": "Nova Banking", "kind": "Mobile App · Redesign", "desc": "Thiết kế lại trải nghiệm ngân hàng số cho thế hệ Gen Z — flow mở thẻ dưới 2 phút.", "year": "2025", "tags": ["Product Design", "iOS", "Figma"]},
+        {"index": "02", "name": "Kafe Identity", "kind": "Brand · Identity System", "desc": "Xây hệ thống thương hiệu cho chuỗi cafe 12 chi nhánh — logo, bao bì, điểm chạm số.", "year": "2024", "tags": ["Branding", "Packaging", "Art Direction"]},
+        {"index": "03", "name": "Lumen Editorial", "kind": "Web · Editorial", "desc": "Trang tạp chí dài hơi về kiến trúc đương đại — typography dẫn lối câu chuyện.", "year": "2024", "tags": ["Editorial", "Typography", "Web"]},
+        {"index": "04", "name": "Orbit Design System", "kind": "System · Components", "desc": "Design system 120+ component cho nền tảng SaaS nội bộ — hướng đến nhất quán đa đội.", "year": "2023", "tags": ["Design System", "Figma", "Documentation"]}
+      ]
+    }
   }
 }

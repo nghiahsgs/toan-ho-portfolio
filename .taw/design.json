@@ -1,76 +1,74 @@
 {
-  "style": {
-    "primary": "Dark Minimalism",
-    "secondary": "Bento-inspired project grid",
-    "rationale": "ui-ux-pro-max: Portfolio/Personal → Motion-Driven + Minimalism. Dark Mode (OLED) provides WCAG AAA contrast, low emission, perfect for developer portfolios. Exaggerated Minimalism reserved for hero typography only.",
-    "complexity": "low",
-    "wcag": "AAA"
-  },
+  "iteration": 2,
+  "direction": "Noir editorial × brutalist grid × lime-neon accent",
+  "pointOfView": "Dark magazine spread — warm off-white ink on true noir, oversized Fraunces serif that bleeds off the page, JetBrains Mono labels like print folios, one electric lime accent used surgically.",
   "palette": {
-    "source": "ui-ux-pro-max colors.csv → Portfolio/Personal (inverted for dark mode)",
-    "bg": "#0A0A0A",
-    "bgElevated": "#18181B",
-    "bgCard": "#111113",
-    "border": "#27272A",
-    "borderHover": "#3F3F46",
-    "text": "#FAFAFA",
-    "textMuted": "#A1A1AA",
-    "textDim": "#71717A",
-    "accent": "#2563EB",
-    "accentHover": "#1D4ED8",
-    "accentRing": "#3B82F6"
+    "noir": "#0A0A0A",
+    "noirRaised": "#131312",
+    "ink": "#F5F2EA",
+    "inkMuted": "#C8C4B7",
+    "muted": "#8A867E",
+    "rule": "#26241F",
+    "neon": "#C6F432",
+    "neonDim": "#8BB022",
+    "grain": "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.04  0 0 0 0 0.04  0 0 0 0 0.04  0 0 0 0.35 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")"
   },
-  "typography": {
-    "headingFont": "Geist Sans",
-    "bodyFont": "Inter",
-    "rationale": "Both are geometric sans-serifs optimized for screens. Geist (by Vercel) gives a sharp, technical identity for headings; Inter handles body copy with superior legibility at small sizes.",
-    "googleFontsImport": "next/font/google — Inter, Geist_Sans",
-    "tailwindConfig": {
-      "fontFamily": {
-        "heading": ["var(--font-geist-sans)", "sans-serif"],
-        "body": ["var(--font-inter)", "sans-serif"]
-      }
+  "fonts": {
+    "display": {
+      "family": "Fraunces",
+      "source": "next/font/google",
+      "axes": { "opsz": "9..144", "SOFT": "0..100", "WONK": "0..1" },
+      "weights": [400, 500, 600, 700, 800, 900],
+      "usage": "H1 / H2 / oversized statements — prefer weight 600-800 with optical size >=96 for display"
     },
-    "scale": {
-      "h1": "clamp(2.75rem, 6vw, 4.5rem)",
-      "h2": "clamp(2rem, 4vw, 3rem)",
-      "h3": "1.5rem",
-      "body": "1rem",
-      "small": "0.875rem"
-    }
+    "mono": {
+      "family": "JetBrains Mono",
+      "source": "next/font/google",
+      "weights": [400, 500, 700],
+      "usage": "Labels, section indices (01/02/03/04), metadata, nav items, folio marks — uppercase, tracked +0.18em"
+    },
+    "body": {
+      "family": "Geist Sans",
+      "source": "already in project (geist package)",
+      "weights": [400, 500],
+      "usage": "Paragraph body copy only. Never headings."
+    },
+    "forbidden": ["Inter", "Roboto", "system-ui as primary", "Space Grotesk", "Arial"]
+  },
+  "type_scale": {
+    "h1_display": "clamp(5rem, 16vw, 14rem)",
+    "h2_section": "clamp(2.5rem, 7vw, 6rem)",
+    "h3_tile": "clamp(1.75rem, 3.5vw, 3rem)",
+    "body": "1.0625rem / 1.65",
+    "label_mono": "0.75rem / 1 uppercase tracking-[0.18em]"
   },
   "layout": {
-    "pattern": "Single-page scroll with 4 anchored sections, sticky top nav",
-    "container": "max-w-5xl mx-auto px-6",
-    "sectionSpacing": "py-24 md:py-32",
-    "nav": {
-      "variant": "floating glass — top-4, backdrop-blur, border-white/10",
-      "links": ["Giới thiệu", "Dự án", "Liên hệ"]
-    },
-    "hero": "Centered, oversized name (Exaggerated Minimalism touch), title below, two CTAs (primary blue + ghost)",
-    "about": "Two-column on md+: bio paragraph left, skill chips / quick facts right",
-    "projects": "2x2 grid on md+, single column mobile. shadcn Card with border hover accent",
-    "contact": "Centered email + 3 social icon buttons (GitHub, LinkedIn, Email)",
-    "footer": "Single line: © 2026 Toan Ho · Built with Next.js"
+    "grid": "12-col editorial, asymmetric — content never centered as a single column",
+    "hero": "H1 'TOAN HO' set in Fraunces weight 800, intentionally clips the right viewport edge by ~8-12vw; left column holds mono kicker + body tagline",
+    "projects": "Full-width horizontal rows (editorial tiles), NOT a 3-up card grid",
+    "indices": "01 / 02 / 03 / 04 — oversized serif numerals set as folios at row-start",
+    "marquee": "Horizontal infinite scroll strip for tag/skill band, 1px neon hairline above/below",
+    "gutters": "px-6 md:px-10 lg:px-16; vertical rhythm 160/240/320 px between sections",
+    "nav": "slim top bar, NOT fixed by default — on scroll gains backdrop-blur + 1px bottom rule"
   },
-  "components": {
-    "library": "shadcn/ui",
-    "install": ["button", "card", "badge", "separator"]
+  "interactions": {
+    "cursorSpot": "radial gradient blob (480px, neon @ 6% opacity, mix-blend-mode: screen) follows pointer with lerp 0.12 — client component, desktop-only",
+    "scrollReveal": "framer-motion whileInView — y:24->0, opacity:0->1, 600ms ease-out, stagger children 80ms",
+    "tileHover": "row lifts -2px, index numeral switches from ink -> neon, neon 1px underline slides L->R under project name, mono meta fades in",
+    "marquee": "CSS @keyframes linear 40s infinite — pause on hover",
+    "linkUnderline": "active nav link: neon hairline 1px under mono label; inactive: transparent"
   },
-  "motion": {
-    "scrollReveal": "fade-up on section enter (CSS only — @media prefers-reduced-motion: no-preference)",
-    "hover": "border-color + subtle translate-y-[-2px], 200ms ease-out",
-    "reducedMotion": "respected"
+  "cohesion_rule": {
+    "neonBudget": "Neon #C6F432 covers <5% of any viewport. Permitted: primary CTA fill, active nav underline, project index on hover, email-link underline on hover. Forbidden: neon body text, neon borders on every card, neon background blocks.",
+    "textureBudget": "Grain overlay at 35% alpha, fixed to viewport, pointer-events:none, z-index:1 — never on top of body copy.",
+    "motionBudget": "Max 1 persistent motion element on screen (cursor spot OR marquee, not both animating loudly)."
   },
-  "icons": {
-    "set": "lucide-react",
-    "size": "w-5 h-5",
-    "rationale": "No emojis as UI icons per ui-ux-pro-max rule"
-  },
-  "accessibility": {
-    "minContrast": "7:1 (AAA) body, 4.5:1 muted",
-    "focusRing": "ring-2 ring-accentRing ring-offset-2 ring-offset-bg",
-    "skipLink": true,
-    "semanticLandmarks": ["header", "main", "section[aria-labelledby]", "footer"]
-  }
+  "forbidden_patterns": [
+    "centered-hero with CTA below tagline",
+    "3-column shadcn Card grid for projects",
+    "pure #000 + pure #FFF (use noir #0A0A0A + warm ink #F5F2EA)",
+    "pastel or purple gradients",
+    "icon-heavy feature rows",
+    "Inter / system-ui defaults"
+  ]
 }

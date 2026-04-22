@@ -1,65 +1,69 @@
-import { Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/brand-icons";
-import { buttonVariants } from "@/components/ui/button";
-import { PROFILE } from "@/lib/content";
-import { cn } from "@/lib/utils";
-
-const iconLinkClass = cn(
-  buttonVariants({ variant: "outline", size: "icon" }),
-  "h-11 w-11 border-white/20 bg-transparent hover:border-white/40 hover:bg-white/5"
-);
+const SOCIAL_LINKS = [
+  { label: "GITHUB", href: "https://github.com/" },
+  { label: "DRIBBBLE", href: "https://dribbble.com/" },
+  { label: "LINKEDIN", href: "https://linkedin.com/" },
+];
 
 export function Contact() {
   return (
-    <div className="mx-auto flex max-w-5xl flex-col items-center px-6 text-center">
-      <h2
+    <div className="px-6 md:px-10 lg:px-16">
+      <p
         id="lien-he-title"
-        className="text-[clamp(2rem,4vw,3rem)] font-bold tracking-tight"
+        className="font-mono text-xs uppercase tracking-[0.3em] text-muted"
       >
-        Liên hệ
-      </h2>
-      <p className="mt-4 max-w-xl text-base text-muted-foreground">
-        Bạn có dự án thú vị? Hãy liên hệ với tôi qua email hoặc các mạng xã hội
-        bên dưới.
+        GET IN TOUCH / 03
       </p>
 
-      <a
-        href={`mailto:${PROFILE.email}`}
-        className="mt-8 inline-flex items-center gap-2 text-lg font-medium text-[#3B82F6] underline decoration-[#3B82F6]/40 underline-offset-4 transition-colors hover:text-[#60A5FA] hover:decoration-[#60A5FA] focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm sm:text-xl"
+      <h2
+        className="mt-10 font-display italic text-ink"
+        style={{
+          fontSize: "clamp(3rem, 10vw, 9rem)",
+          lineHeight: 0.9,
+          letterSpacing: "-0.03em",
+          fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 1',
+        }}
       >
-        <Mail className="h-5 w-5" aria-hidden="true" />
-        {PROFILE.email}
+        Hãy cộng tác.
+      </h2>
+
+      <a
+        href="mailto:hello@toanho.com"
+        className="group mt-14 inline-block font-display text-ink"
+        style={{
+          fontSize: "clamp(2.5rem, 7vw, 6rem)",
+          lineHeight: 1,
+          letterSpacing: "-0.02em",
+          fontVariationSettings: '"opsz" 96, "SOFT" 40, "WONK" 0',
+        }}
+      >
+        <span className="relative">
+          hello@toanho.com
+          <span
+            aria-hidden
+            className="absolute -bottom-1 left-0 block h-[2px] w-full origin-left scale-x-0 bg-neon transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-x-100"
+          />
+        </span>
       </a>
 
-      <ul className="mt-8 flex items-center gap-3">
-        <li>
-          <a
-            href={PROFILE.github}
-            aria-label="GitHub của Toan Ho"
-            className={iconLinkClass}
-          >
-            <GithubIcon className="h-5 w-5" />
-          </a>
-        </li>
-        <li>
-          <a
-            href={PROFILE.linkedin}
-            aria-label="LinkedIn của Toan Ho"
-            className={iconLinkClass}
-          >
-            <LinkedinIcon className="h-5 w-5" />
-          </a>
-        </li>
-        <li>
-          <a
-            href={`mailto:${PROFILE.email}`}
-            aria-label="Gửi email cho Toan Ho"
-            className={iconLinkClass}
-          >
-            <Mail className="h-5 w-5" aria-hidden="true" />
-          </a>
-        </li>
+      <ul className="mt-16 flex flex-wrap items-center gap-x-10 gap-y-4">
+        {SOCIAL_LINKS.map((s) => (
+          <li key={s.label}>
+            <a
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.3em] text-ink-muted hover:text-neon transition-colors"
+            >
+              <span>{s.label}</span>
+              <span aria-hidden>↗</span>
+            </a>
+          </li>
+        ))}
       </ul>
+
+      <p className="mt-10 max-w-lg font-sans text-[15px] leading-[1.65] text-muted">
+        Sài Gòn, Việt Nam · Đang nhận dự án quý 2/2025
+      </p>
     </div>
   );
 }

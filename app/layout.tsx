@@ -1,60 +1,46 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { fraunces, jetbrainsMono } from "./fonts";
 import "./globals.css";
 import { SiteNav } from "@/components/site-nav";
-import { SkipLink } from "@/components/skip-link";
 import { SiteFooter } from "@/components/site-footer";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
+import { SkipLink } from "@/components/skip-link";
+import { CursorSpot } from "@/components/cursor-spot";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://toanho.example.com"),
   title: {
-    default: "Toan Ho — Full-Stack Developer",
+    default: "Toan Ho — Product Designer",
     template: "%s | Toan Ho",
   },
-  description:
-    "Tôi là một lập trình viên full-stack với niềm đam mê xây dựng ứng dụng web hiện đại.",
+  description: "Product designer dựng trải nghiệm số ở Sài Gòn.",
   keywords: [
     "Toan Ho",
-    "Full-Stack Developer",
-    "Next.js",
-    "React",
-    "Node.js",
-    "TypeScript",
+    "Product Designer",
+    "UI UX",
+    "Brand Identity",
+    "Design System",
+    "Editorial",
     "Portfolio",
+    "Saigon",
   ],
   authors: [{ name: "Toan Ho" }],
   creator: "Toan Ho",
   openGraph: {
-    title: "Toan Ho — Full-Stack Developer",
-    description:
-      "Tôi là một lập trình viên full-stack với niềm đam mê xây dựng ứng dụng web hiện đại.",
+    title: "Toan Ho — Product Designer",
+    description: "Product designer dựng trải nghiệm số ở Sài Gòn.",
     url: "/",
     siteName: "Toan Ho",
     locale: "vi_VN",
     type: "website",
+    images: [{ url: "/icon.svg", width: 512, height: 512, alt: "Toan Ho" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Toan Ho — Full-Stack Developer",
-    description:
-      "Tôi là một lập trình viên full-stack với niềm đam mê xây dựng ứng dụng web hiện đại.",
+    title: "Toan Ho — Product Designer",
+    description: "Product designer dựng trải nghiệm số ở Sài Gòn.",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
@@ -66,19 +52,21 @@ export const viewport: Viewport = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="vi"
-      className={`dark ${geistSans.variable} ${inter.variable}`}
+      className={`dark ${fraunces.variable} ${jetbrainsMono.variable} ${GeistSans.variable}`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen bg-background text-foreground antialiased">
+      <body className="bg-noir text-ink font-sans antialiased overflow-x-hidden">
+        <div className="grain-overlay" aria-hidden />
+        <CursorSpot />
         <SkipLink />
         <SiteNav />
-        <main id="main">{children}</main>
+        <main id="main" className="relative z-10">
+          {children}
+        </main>
         <SiteFooter />
       </body>
     </html>
