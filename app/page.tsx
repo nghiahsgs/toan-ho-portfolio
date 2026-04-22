@@ -2,6 +2,7 @@ import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
 import { Projects } from "@/components/sections/projects";
 import { Contact } from "@/components/sections/contact";
+import { Reveal } from "@/components/reveal";
 
 export default function Home() {
   return (
@@ -13,9 +14,11 @@ export default function Home() {
       <section
         id="gioi-thieu"
         aria-labelledby="gioi-thieu-title"
-        className="scroll-mt-20 py-24 md:py-32"
+        className="scroll-mt-20 py-32 md:py-48"
       >
-        <About />
+        <Reveal>
+          <About />
+        </Reveal>
       </section>
 
       <section
@@ -23,15 +26,19 @@ export default function Home() {
         aria-labelledby="du-an-title"
         className="scroll-mt-20 py-24 md:py-32"
       >
-        <Projects />
+        <Reveal>
+          <Projects />
+        </Reveal>
       </section>
 
       <section
         id="lien-he"
         aria-labelledby="lien-he-title"
-        className="scroll-mt-20 py-24 md:py-32"
+        className="scroll-mt-20 py-32 md:py-48"
       >
-        <Contact />
+        <Reveal>
+          <Contact />
+        </Reveal>
       </section>
     </>
   );
